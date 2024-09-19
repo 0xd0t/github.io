@@ -1,0 +1,431 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+   
+/* Font Families */
+@font-face {
+    font-family: 'Rubik Glitch';
+    src: url('../fonts/Rubik-Glitch-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Mono';
+    src: url('../fonts/DMMono-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Major Mono Display';
+    src: url('../fonts/MajorMonoDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Syne Mono';
+    src: url('../fonts/SyneMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Site-Wide Details */
+html {
+  font-size: 12px;
+}
+
+body {
+  background: url(../images/bck-grid.gif) repeat;
+  background-color: black;
+  color: white;
+  font-family: 'DM Mono', monospace;
+}
+
+
+/* Heading Adjustments (H1-H6) */
+h1 {
+  font-family: 'Rubik Glitch', cursive;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Syne Mono', monospace;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+/* Links and Focus */
+a {
+  color: limegreen;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: yellow;
+}
+
+a:visited {
+  color: orange;
+}
+.navTopLevel > a:visited, .navBotLevel > a:visited {
+  color: limegreen;
+  text-decoration: none;
+}
+
+
+/* Site Header Details */
+header {
+  width: 100%;
+}
+
+.siteTitle {
+  font-family: 'Rubik Glitch', cursive;
+  font-size: 2rem;
+}
+a > .siteTitle, a:visited > .siteTitle, a:hover > .siteTitle { color: white; text-decoration: none; }
+
+
+/* Navigation Styling */
+nav#mobileNav { display: block; }
+
+#hamburger-icon {
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+nav#mobileNav > ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: flex–start;
+  justify-content: space-around;
+}
+
+nav#mobileNav > ul a {
+  color: white;
+}
+
+nav#mobileNav > ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+nav#mobileNav > ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 180px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+  background-color: black;
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex–start;
+  justify-content: flex-start;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+nav#desktopNav { display: none; }
+
+.navTopLevel {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.navBotLevel {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+aside { clear: both; }
+
+#desktopNav > ul,
+#mobileNav > div > ul {
+  list-style-type: none;
+  padding:0;
+  margin:0;
+}
+
+#desktopNav > ul > li {
+  margin: 0.6em 0 0 0;
+}
+#mobileNav > div > ul > li,
+#mobileNav > div > ul > ul > li {
+  margin: 1em 0 0 2em;
+}
+
+/* first list item */
+#desktopNav > ul > li:nth-child(1)::before,
+#mobileNav > div > ul > li:nth-child(1)::before {
+  content: "🏠 ";
+}
+/* second list item */
+#desktopNav > ul > li:nth-child(2)::before,
+#mobileNav > div > ul > li:nth-child(2)::before {
+  content: "📝 ";
+}
+/* third list item */
+#desktopNav > ul > li:nth-child(3)::before,
+#mobileNav > div > ul > li:nth-child(3)::before {
+  content: "📱  ";
+}
+
+
+/* Internal Section Styles */
+.rainbow-lr {
+  background: linear-gradient(to right, red, orange , yellow, green, cyan, blue, violet);
+  color:transparent;
+  background-clip: text;
+}
+.rainbow-td {
+  background: linear-gradient(to bottom, red, orange , yellow, green, cyan, blue, violet);
+  color:transparent;
+  background-clip: text;
+}
+
+.pink { color: hotpink; }
+
+#aboutMe, #blogFeed, #changeLog {
+  box-sizing: border-box;
+  outline: 3px double limegreen;
+  background: url('../images/num.gif') repeat;
+  background-color: black;
+  padding: 2em;
+}
+
+.sideHead {
+  font-size: larger;
+  margin-top: 0;
+}
+
+#changeLog > ul { list-style-type: none; margin: 0; padding: 0;}
+
+
+/* Tabbed On-Page Section */
+ul.tabbedNav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  border: 1px solid limegreen;
+}
+
+li.tabbed {
+  float: left;
+  outline: 1px solid limegreen;
+}
+
+li.tabbed a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.tabbed a:hover {
+  background-color: #111;
+}
+
+li.tabbed#active {
+  background-color: limegreen;
+}
+
+h4.green {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+p.quoteLine { 
+  border-left: 1px dashed limegreen;
+  padding-left: 1em;
+}
+
+
+/* X-Small (phones, under 576px) */
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+aside {
+  box-sizing: border-box;
+  float: left;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 2em 0;
+}
+
+main {
+  box-sizing: border-box;
+  float: left;
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  outline: 3px double limegreen;
+  margin: 1em 0;
+  padding: 2rem 3rem;
+  font-size: 14px;
+}
+
+main iframe {
+  width: 100%;
+  height: 750px;
+}
+
+footer {
+  box-sizing: border-box;
+  float: left;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+
+/* Small (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .siteTitle { font-size: 4rem; }
+}
+
+
+/* Medium (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container { width: 90%; margin: 0 auto; }
+  nav#mobileNav {display: none; }
+  nav#desktopNav {display: block; }
+  aside { width: 25%; margin-right: 2%; height: 100%; }
+  main { width: 45%; margin-right: 3%; height: 100%; }
+  footer { width: 20%; height: 100%; }
+}
+
+
+/* Large (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container { width: 80%; margin: 0 auto; }
+  aside { width: 20%; margin-right: 2%; height: 100%; }
+  main { width: 50%; margin-right: 3%; height: 100%; }
+  footer { width: 20%; height: 100%; }
+}
+
+
+/* X-Large (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+}
+
+
+/* XX-Large (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  
+}
+
+audio {
+  display: block;
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+  background-color: #000; /* Dark background */
+  border: 2px solid limegreen; /* Green border */
+  border-radius: 5px;
+  margin: 20px auto; /* Center the audio player */
+  overflow: hidden;
+}
+
+/* Styling for the controls */
+audio::-webkit-media-controls-panel {
+  background-color: #000;
+  color: limegreen;
+}
+
+/* Play button */
+audio::-webkit-media-controls-play-button {
+  background-color: limegreen;
+  color: #000;
+  border-radius: 50%;
+}
+
+/* Volume slider */
+audio::-webkit-media-controls-volume-slider {
+  background: limegreen;
+}
+
+/* Progress bar */
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  background-color: #000;
+  color: limegreen;
+}
+
+/* Progress bar fill */
+audio::-webkit-media-controls-timeline::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, limegreen, #000);
+}
+
+/* Hover effects */
+audio:hover {
+  box-shadow: 0 0 10px limegreen;
+  transition: box-shadow 0.3s ease;
+}
+
+/* For Firefox */
+audio::-moz-media-controls-panel {
+  background-color: #000;
+  color: limegreen;
+}
+
+audio::-moz-media-controls-play-button {
+  background-color: limegreen;
+  color: #000;
+}
+
+audio::-moz-media-controls-volume-slider {
+  background: limegreen;
+}
+
+audio::-moz-media-controls-timeline {
+  background-color: #000;
+  color: limegreen;
+}
